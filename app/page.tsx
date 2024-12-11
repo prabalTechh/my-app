@@ -1,101 +1,108 @@
-import Image from "next/image";
+'use client'
+import { Children } from "react";
+import  ChatBot  from "./components/Chatbot";
+import Offer from "./components/Offer";
+import { Svg1 } from "./svg/Svg1";
+import { Svg2 } from "./svg/Svg2";
+import { Svg3 } from "./svg/Svg3";
+import { Svg4 } from "./svg/Svg4";
+import Chatbot from "./components/Chatbot";
+import Footer from "./components/Footer";
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="flex justify-between px-20 ">
+        <div className="  flex flex-col justify-end pb-16 gap-4">
+          <h1 className="font-medium text-blue-600 text-5xl">
+            Do What's <br /> Best For Your <br />
+            Brand.
+          </h1>
+          <button className="uppercase py-2 px-8 border border-blue-600">
+            Book a meeting
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div className="bg-blue-200">
+          <img
+            src="https://static.wixstatic.com/media/913019_a8362a4c886e427ab8fc6064673d7764~mv2.jpg/v1/fill/w_1043,h_631,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/913019_a8362a4c886e427ab8fc6064673d7764~mv2.jpg"
+            alt="ImageMain"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+        </div>
+      </div>
+      <div className="flex flex-col items-center gap-6 mt-20 text-lg text-blue-600 ">
+        <h1>what we do</h1>
+        <Offer
+          svg={<Svg1 />}
+          title={"Shifting The Nerratives"}
+          desc={
+            "we help you in shifting all your negative PR into positive ones using our strategic UGC push."
+          }
+        />
+        <Offer
+          svg={<Svg2 />}
+          title={"Building An Online Presence"}
+          desc={
+            "We give your brand a much-needed push in all the relevant communities and forums to make sure that you don't go unnoticed."
+          }
+        />
+        <Offer
+          svg={<Svg3 />}
+          title={"Building A Personal Brand"}
+          desc={
+            "People relate with founders much better than they relate with Brands. We help you become more relatable and connect with your audience on a deeper lever."
+          }
+        />
+        <Offer
+          svg={<Svg4 />}
+          title={"Building Your Content Funnel"}
+          desc={
+            "Boost website traffic by 20% and brand awareness by 35%! Our all-in-one solution, encompassing research, writing, SEO-optimized blogs, and captivating videos, helps you build an impeccable content machine that gets results."
+          }
+        />
+        <hr className="w-[calc(100vw-10vw)]  border mb-2  border-blue-600" />
+
+        <button className="px-5 py-2 text-xs border border-blue-600">
+          Book Now
+        </button>
+      </div>
+
+      <div className="w-full flex flex-col items-center  mt-20 gap-6 py-10">
+        <h1 className="py-4 text-2xl text-blue-600 font-semibold">The Difference We've Made So Far</h1>
+        <div className="flex gap-8">
+          <InputDiv
+            heading="50k+"
+            para="average Impressions/per week/per brand"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <InputDiv
+            heading="15%"
+            para="Avg. Increase in sales within 3 months of our content service."
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <InputDiv
+            heading="30%"
+            para="Better engagement on personal accounts within 2 months"
+          />
+          <InputDiv
+            heading="20+"
+            para="Business Impacted so far"
+          />
+        </div>
+        <div className="pt-10">
+        <Chatbot />
+        </div>
+        <div>
+          <Footer />
+        </div>
+      </div>
+    </>
+  );
+}
+
+function InputDiv({ heading, para }: { heading: string; para: string }) {
+  return (
+    <div className="flex flex-col items-center text-blue-600">
+      <h1 className="text-2xl font-medium">{heading}</h1>
+      <p className="text-xs w-40 text-center">{para}</p>
     </div>
   );
 }
